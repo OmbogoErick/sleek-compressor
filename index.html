@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleek Compress - Micro Tool</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-slate-900 text-white flex flex-col items-center justify-center min-h-screen p-6">
+
+    <div class="max-w-md w-full bg-slate-800 p-6 rounded-2xl shadow-xl text-center border border-slate-700">
+        <h1 class="text-2xl font-bold mb-2">⚡ Fast Image Compressor</h1>
+        <p class="text-slate-400 text-sm mb-6">Compress your images locally in milliseconds.</p>
+
+        <!-- Upload Zone -->
+        <input type="file" id="imageInput" accept="image/jpeg, image/png, image/webp" class="hidden">
+        <label for="imageInput" class="block border-2 border-dashed border-slate-600 rounded-xl p-8 cursor-pointer hover:border-emerald-500 transition-colors">
+            <span class="text-slate-300">Click to upload or drag an image here</span>
+        </label>
+
+        <!-- Controls (Hidden until file is chosen) -->
+        <div id="controls" class="mt-6 hidden">
+            <label class="block text-left text-sm font-medium mb-2">Compression Quality: <span id="qualityVal">70%</span></label>
+            <input type="range" id="quality" min="10" max="100" value="70" class="w-full accent-emerald-500">
+            
+            <button id="compressBtn" class="mt-4 w-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2 px-4 rounded-xl transition-colors cursor-pointer">
+                Compress Image
+            </button>
+        </div>
+
+        <!-- Download Link -->
+        <div id="resultZone" class="mt-6 hidden">
+            <p class="text-sm text-slate-400 mb-2" id="sizeSavings"></p>
+            <a id="downloadLink" download="compressed-image.jpeg" class="block text-center bg-blue-600 hover:bg-blue-500 text-white font-medium py-2 px-4 rounded-xl transition-colors">
+                Download Compressed Image
+            </a>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
